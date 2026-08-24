@@ -196,7 +196,7 @@
 
     .productos {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
@@ -215,6 +215,27 @@
   background-repeat: no-repeat;
 }
 
+    .producto-miel {
+    background-image: url("miel-calendula.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+    .producto-carbon {
+    background-image: url("carbon-activado.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+    .producto-avena {
+    background-image: url("lavanda-avena.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    
     .numero {
       position: absolute;
       top: 16px;
@@ -401,26 +422,36 @@
         </p>
       </article>
 
-      <article class="producto">
-        <div class="producto-imagen">
-          <span class="numero">02</span>
-        </div>
-        <h3>Próxima elaboración</h3>
-        <p>
-          Nuevas fórmulas botánicas actualmente en desarrollo.
-        </p>
-      </article>
+     <article class="producto">
+  <div class="producto-imagen producto-miel">
+    <span class="numero">02</span>
+  </div>
+  <h3>Miel y Caléndula</h3>
+  <p>
+    Jabón artesanal hidratante y nutritivo con miel y caléndula.
+  </p>
+</article>
 
       <article class="producto">
-        <div class="producto-imagen">
+        <div class="producto-imagen producto-carbon">
           <span class="numero">03</span>
         </div>
-        <h3>Esencia Raíz</h3>
+        <h3>Carbón Activado</h3>
         <p>
-          Una colección que crecerá junto con nuestros procesos.
-        </p>
+        Jabón artesanal purificante con carbón activado, tea tree y menta.
+    </p>
       </article>
 
+<article class="producto">
+    <div class="producto-imagen producto-avena">
+        <span class="numero">04</span>
+    </div>
+    <h3>Lavanda y Avena</h3>
+    <p>
+        Jabón artesanal de lavanda y avena, pensado para una limpieza suave y delicada.
+    </p>
+</article>
+      
     </div>
 
   </section>
