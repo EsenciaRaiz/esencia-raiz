@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Esencia Raíz</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --fondo: #171a16;
+      --fondo-suave: #20241e;
+      --crema: #f1eee5;
+      --verde: #a7b59b;
+      --verde-oscuro: #687660;
+      --rosa: #c9aaa5;
+      --linea: rgba(241, 238, 229, 0.18);
+    }
+
+    body {
+      background: var(--fondo);
+      color: var(--crema);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* CABECERA */
+
+    header {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4vw;
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .marca {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+    }
+
+    .marca span {
+      font-weight: 300;
+    }
+
+    nav {
+      display: flex;
+      gap: 32px;
+    }
+
+    nav a {
+      color: var(--crema);
+      text-decoration: none;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: var(--verde);
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 75px 4vw 45px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .intro h1 {
+      font-size: clamp(50px, 8vw, 120px);
+      line-height: 0.88;
+      letter-spacing: -5px;
+      font-weight: 500;
+      max-width: 950px;
+    }
+
+    .intro h1 em {
+      color: var(--rosa);
+      font-style: normal;
+    }
+
+    .intro-texto {
+      max-width: 380px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: rgba(241,238,229,.72);
+      padding-bottom: 10px;
+    }
+
+    /* MOSAICO EDITORIAL */
+
+    .mosaico {
+      padding: 0 4vw;
+      display: grid;
+      grid-template-columns: 1.5fr 0.75fr 0.75fr;
+      grid-template-rows: 330px 250px;
+      gap: 12px;
+    }
+
+    .pieza {
+      position: relative;
+      overflow: hidden;
+      background: var(--fondo-suave);
+    }
+
+    .principal {
+      grid-row: 1 / 3;
+      background:
+        linear-gradient(135deg, #bca5a1, #d9cbc4);
+    }
+
+    .lavanda {
+      background:
+        linear-gradient(135deg, #747066, #a79f91);
+    }
+
+    .botanica {
+      background:
+        linear-gradient(135deg, #66705d, #9ca58e);
+    }
+
+    .artesanal {
+      grid-column: 2 / 4;
+      background:
+        linear-gradient(135deg, #d4c9b7, #968d7c);
+    }
+
+    .etiqueta {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      background: var(--fondo);
+      padding: 14px 18px;
+      max-width: 330px;
+    }
+
+    .etiqueta small {
+      display: block;
+      color: var(--verde);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 7px;
+    }
+
+    .etiqueta h2 {
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    /* PRODUCTOS */
+
+    .seccion {
+      padding: 100px 4vw;
+    }
+
+    .encabezado-seccion {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--linea);
+      margin-bottom: 35px;
+    }
+
+    .encabezado-seccion h2 {
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: 400;
+      letter-spacing: -3px;
+    }
+
+    .encabezado-seccion span {
+      color: var(--verde);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .producto-imagen {
+      aspect-ratio: 4 / 5;
+      background:
+        linear-gradient(145deg, #bfa7a3, #d8ccc3);
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .numero {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: 12px;
+      background: var(--fondo);
+      padding: 8px 10px;
+    }
+
+    .producto h3 {
+      font-size: 21px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .producto p {
+      color: rgba(241,238,229,.6);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    /* MANIFIESTO */
+
+    .manifiesto {
+      margin: 30px 4vw 100px;
+      padding: 80px 6vw;
+      background: var(--crema);
+      color: var(--fondo);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+    }
+
+    .manifiesto small {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .manifiesto p {
+      font-size: clamp(30px, 4vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--linea);
+      padding: 45px 4vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      color: rgba(241,238,229,.65);
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+
+      header {
+        align-items: flex-start;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        gap: 25px;
+        flex-direction: column;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 15px 22px;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .intro h1 {
+        letter-spacing: -3px;
+      }
+
+      .mosaico {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 300px);
+      }
+
+      .principal,
+      .artesanal {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .productos {
+        grid-template-columns: 1fr;
+      }
+
+      .manifiesto {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="marca">ESENCIA <span>RAÍZ</span></div>
+
+  <nav>
+    <a href="#productos">Productos</a>
+    <a href="#esencia">Nuestra esencia</a>
+    <a href="#elaboracion">Elaboración</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="intro">
+    <h1>
+      Natural por <em>esencia.</em><br>
+      Artesanal de raíz.
+    </h1>
+
+    <div class="intro-texto">
+      Cosmética artesanal creada en pequeños lotes,
+      con ingredientes seleccionados y procesos que respetan
+      el tiempo de cada producto.
+    </div>
+  </section>
+
+
+  <section class="mosaico">
+
+    <article class="pieza principal">
+      <div class="etiqueta">
+        <small>Jabón artesanal</small>
+        <h2>Lavanda + Arcilla Rosa</h2>
+      </div>
+    </article>
+
+    <article class="pieza lavanda">
+      <div class="etiqueta">
+        <small>Botánica</small>
+        <h2>Lavanda</h2>
+      </div>
+    </article>
+
+    <article class="pieza botanica">
+      <div class="etiqueta">
+        <small>Origen</small>
+        <h2>Ingredientes simples</h2>
+      </div>
+    </article>
+
+    <article class="pieza artesanal">
+      <div class="etiqueta">
+        <small>Proceso</small>
+        <h2>Hecho en pequeños lotes</h2>
+      </div>
+    </article>
+
+  </section>
+
+
+  <section class="seccion" id="productos">
+
+    <div class="encabezado-seccion">
+      <h2>Productos</h2>
+      <span>Esencia Raíz / 2026</span>
+    </div>
+
+    <div class="productos">
+
+      <article class="producto">
+        <div class="producto-imagen">
+          <span class="numero">01</span>
+        </div>
+        <h3>Lavanda + Arcilla Rosa</h3>
+        <p>
+          Jabón artesanal elaborado mediante proceso en frío.
+        </p>
+      </article>
+
+      <article class="producto">
+        <div class="producto-imagen">
+          <span class="numero">02</span>
+        </div>
+        <h3>Próxima elaboración</h3>
+        <p>
+          Nuevas fórmulas botánicas actualmente en desarrollo.
+        </p>
+      </article>
+
+      <article class="producto">
+        <div class="producto-imagen">
+          <span class="numero">03</span>
+        </div>
+        <h3>Esencia Raíz</h3>
+        <p>
+          Una colección que crecerá junto con nuestros procesos.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section class="manifiesto" id="esencia">
+
+    <small>Nuestra esencia</small>
+
+    <p>
+      Menos artificio.<br>
+      Más materia, tiempo y origen.
+    </p>
+
+  </section>
+
+</main>
+
+
+<footer id="contacto">
+
+  <div>
+    ESENCIA RAÍZ<br>
+    Cosmética artesanal
+  </div>
+
+  <div>
+    Uruguay
+  </div>
+
+  <div>
+    © 2026 Esencia Raíz
+  </div>
+
+</footer>
+
+</body>
+</html>
