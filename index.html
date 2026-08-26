@@ -259,26 +259,31 @@
 
     /* MANIFIESTO */
 
-    .manifiesto {
-      margin: 30px 4vw 100px;
-      padding: 80px 6vw;
-      background: var(--crema);
-      color: var(--fondo);
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 60px;
-    }
+.manifiesto {
+    margin: 40px 4vw 100px;
+    padding: 100px 7vw;
+    background: var(--crema);
+    color: var(--fondo);
+    display: grid;
+    grid-template-columns: 0.8fr 2.2fr;
+    gap: 80px;
+    align-items: start;
+}
 
-    .manifiesto small {
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
+  .manifiesto small {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.65;
+}
 
-    .manifiesto p {
-      font-size: clamp(30px, 4vw, 58px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-    }
+   .manifiesto p {
+    font-size: clamp(34px, 4.5vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -2.5px;
+    max-width: 900px;
+}
 
     /* FOOTER */
 
@@ -331,8 +336,11 @@
       }
 
       .manifiesto {
-        grid-template-columns: 1fr;
-      }
+    grid-template-columns: 1fr;
+    padding: 60px 7vw;
+    gap: 30px;
+    margin-bottom: 70px;
+}
 
       footer {
         flex-direction: column;
