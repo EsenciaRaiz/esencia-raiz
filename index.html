@@ -491,10 +491,13 @@
   </div>
 
   <div>
-    © 2026 Esencia Raíz
+    © <span id="anio-actual"></span> Esencia Raíz<br><span style="display:block;margin-top:6px;opacity:.75;font-size:12px">Diseño web: Mosegui Estudio Digital</span>
   </div>
 
 </footer>
 
+<script>
+  document.getElementById("anio-actual").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
