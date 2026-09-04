@@ -305,9 +305,16 @@
     }
 
     .bienestar-producto:nth-child(2) {
-      background: linear-gradient(145deg, #c9aaa5, #a7b59b);
+      background-image:
+        linear-gradient(to top, rgba(23,26,22,.96) 0%, rgba(23,26,22,.82) 38%, rgba(23,26,22,.08) 72%),
+        url("bombas-efervescentes-natural.webp");
+      background-size: cover;
+      background-position: center;
       min-height: 390px;
+      color: var(--crema);
     }
+
+    .bienestar-producto:nth-child(2)::before { display: none; }
 
     .bienestar-producto small,
     .paso small {
@@ -325,42 +332,10 @@
 
     .bienestar-producto p { max-width: 470px; line-height: 1.5; }
 
-    .bienestar-producto > :not(.bombas-ilustracion) {
+    .bienestar-producto > * {
       position: relative;
       z-index: 2;
     }
-
-    .bombas-ilustracion {
-      position: absolute;
-      top: 18px;
-      right: 24px;
-      width: 220px;
-      height: 145px;
-      z-index: 1;
-    }
-
-    .bomba {
-      position: absolute;
-      width: 105px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 28%, #fff, #eeeae2 58%, #c9c5bd 100%);
-      box-shadow: 0 15px 26px rgba(23,26,22,.24);
-    }
-
-    .bomba::after {
-      content: "";
-      position: absolute;
-      left: 4px;
-      right: 4px;
-      top: 50%;
-      border-top: 1px solid rgba(104,118,96,.35);
-      transform: rotate(-6deg);
-    }
-
-    .bomba-uno { left: 0; top: 28px; }
-    .bomba-dos { left: 70px; top: 3px; transform: scale(.9); }
-    .bomba-tres { right: 0; top: 40px; transform: scale(.78); }
 
     .aviso-ilustrativo {
       position: absolute;
@@ -369,7 +344,10 @@
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      opacity: .7;
+      padding: 8px 10px;
+      background: rgba(23,26,22,.82);
+      color: var(--crema);
+      opacity: .9;
     }
 
     .bienestar-estado {
@@ -732,11 +710,6 @@
 
         <article class="bienestar-producto">
           <span class="aviso-ilustrativo">Imagen ilustrativa</span>
-          <div class="bombas-ilustracion" aria-hidden="true">
-            <span class="bomba bomba-uno"></span>
-            <span class="bomba bomba-dos"></span>
-            <span class="bomba bomba-tres"></span>
-          </div>
           <small>Disponible / 06</small>
           <h4>Bombas efervescentes</h4>
           <p>Bombas artesanales blancas con sales de Epsom, disponibles en menta y lavanda. Para bañera o pediluvio. Próximamente, nuevos aromas.</p>
