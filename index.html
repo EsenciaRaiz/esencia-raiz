@@ -531,6 +531,16 @@
 
     .credito-romansi:hover { opacity: 1; }
 
+    .enlace-whatsapp {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--crema);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .enlace-whatsapp:hover { color: var(--verde); }
+
     .privacidad {
       padding: 32px;
       background: var(--fondo-suave);
@@ -893,7 +903,11 @@
   </div>
 
   <div>
-    Uruguay<br><a href="#privacidad" style="display:inline-block;margin-top:6px;color:inherit">Privacidad</a>
+    Uruguay<br>
+    <a id="enlace-whatsapp" class="enlace-whatsapp" href="https://wa.me/59897632965?text=Hola%2C%20quiero%20consultar%20por%20los%20productos%20de%20Esencia%20Ra%C3%ADz." target="_blank" rel="noopener noreferrer">
+      WhatsApp <span id="telefono-visible">+598 97 632 965</span>
+    </a><br>
+    <a href="#privacidad" style="display:inline-block;margin-top:8px;color:inherit">Privacidad</a>
   </div>
 
   <div>

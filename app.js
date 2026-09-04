@@ -5,6 +5,21 @@ const CATALOGO_API =
 
 document.getElementById("anio-actual").textContent = new Date().getFullYear();
 
+function aplicarContacto(contacto) {
+  if (!contacto || !contacto.telefono) return;
+
+  const telefono = String(contacto.telefono).replace(/\D/g, "");
+  if (!telefono) return;
+
+  const mensaje = contacto.mensajeAutomatico ||
+    "Hola, quiero consultar por los productos de Esencia Raíz.";
+  const enlace = document.getElementById("enlace-whatsapp");
+  const visible = document.getElementById("telefono-visible");
+
+  if (enlace) enlace.href = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+  if (visible) visible.textContent = contacto.telefonoVisible || telefono;
+}
+
 function aplicarDisponibilidad(productos) {
   const porId = new Map(productos.map((producto) => [String(producto.id), producto]));
 
@@ -39,6 +54,7 @@ async function cargarCatalogo() {
     const datos = await respuesta.json();
     if (!datos || !Array.isArray(datos.productos)) throw new Error("Respuesta inválida");
     aplicarDisponibilidad(datos.productos);
+    aplicarContacto(datos.contacto);
   } catch (error) {
     mensaje.textContent = "No pudimos actualizar la disponibilidad. Podés consultar directamente con Esencia Raíz.";
     console.warn("No fue posible cargar el catálogo público.", error);

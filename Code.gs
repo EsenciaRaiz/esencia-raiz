@@ -3,18 +3,40 @@
  * Publica exclusivamente datos seleccionados de PRODUCTOS.
  * No expone recetas, costos, proveedores ni movimientos de stock.
  */
-const PLANILLA_ID = '1rW0HZCTjyJ-WlzZYGe8ANNYqnc3vTFMVgKSKdDXKnlQ';
+const PLANILLA_ID = '1BBIIuGlssSipCcZr2EzKMNrpIAHBUb_e_qC8RQ17PnM';
 
 function doGet() {
   const salida = {
     version: 1,
     actualizado: new Date().toISOString(),
     productos: obtenerProductosPublicos_(),
+    contacto: obtenerContactoPublico_(),
   };
 
   return ContentService
     .createTextOutput(JSON.stringify(salida))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+function obtenerContactoPublico_() {
+  const hoja = SpreadsheetApp.openById(PLANILLA_ID).getSheetByName('CONTACTO');
+  if (!hoja) return null;
+
+  const valores = hoja.getRange('A2:B20').getDisplayValues();
+  const campos = Object.fromEntries(
+    valores
+      .filter((fila) => fila[0])
+      .map((fila) => [normalizarEncabezado_(fila[0]), String(fila[1]).trim()])
+  );
+
+  const telefono = (campos.TELEFONO_WHATSAPP || '').replace(/\D/g, '');
+  if (!telefono) return null;
+
+  return {
+    telefono: telefono,
+    telefonoVisible: campos.TELEFONO_VISIBLE || telefono,
+    mensajeAutomatico: campos.MENSAJE_AUTOMATICO || 'Hola, quiero consultar por los productos de Esencia Raíz.',
+  };
 }
 
 function obtenerProductosPublicos_() {
