@@ -946,7 +946,30 @@
         max-width: none;
       }
     }
-  </style>
+</style>
+<style>
+  .footer-base .credito-romansi {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin: 0;
+    color: rgba(241,238,229,.62);
+    font-size: 10px;
+    letter-spacing: .12em;
+    opacity: 1;
+    text-decoration: none;
+  }
+  .footer-base .credito-romansi img {
+    display: block;
+    width: 104px;
+    height: auto;
+  }
+  .footer-base .credito-romansi:hover { color: var(--crema); }
+  @media (max-width: 800px) {
+    .footer-base .credito-romansi { justify-content: flex-start; }
+  }
+</style>
 </head>
 
 <body>
@@ -1233,7 +1256,8 @@
     <span>© <span id="anio-actual"></span> Esencia Raíz</span>
     <a href="#privacidad">Política de privacidad</a>
     <a class="credito-romansi" href="https://romansi-estudio-digital-mau72.ondigitalocean.app/" target="_blank" rel="noopener noreferrer" aria-label="Visitar ROMANSI Estudio Digital">
-      Diseño y desarrollo web <strong>ROMANSI</strong>
+      <img src="romansi-logo.webp" alt="ROMANSI" width="104" height="32">
+      <span>Diseño y desarrollo web</span>
     </a>
   </div>
 </footer>
