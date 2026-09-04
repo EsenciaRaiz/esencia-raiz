@@ -304,6 +304,18 @@
       top: -55px;
     }
 
+    .bienestar-producto:first-child {
+      background-image:
+        linear-gradient(to top, rgba(23,26,22,.96) 0%, rgba(23,26,22,.78) 40%, rgba(23,26,22,.06) 76%),
+        url("sales-bano-flores-secas.webp");
+      background-size: cover;
+      background-position: center;
+      min-height: 390px;
+      color: var(--crema);
+    }
+
+    .bienestar-producto:first-child::before { display: none; }
+
     .bienestar-producto:nth-child(2) {
       background-image:
         linear-gradient(to top, rgba(23,26,22,.96) 0%, rgba(23,26,22,.82) 38%, rgba(23,26,22,.08) 72%),
@@ -462,6 +474,84 @@
     align-items: start;
 }
 
+    /* EMPRESA Y PRIVACIDAD */
+
+    .informacion {
+      padding: 75px 4vw 95px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+      gap: clamp(45px, 8vw, 120px);
+      border-top: 1px solid var(--linea);
+    }
+
+    .informacion small {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--verde);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .informacion h2 {
+      max-width: 720px;
+      margin-bottom: 24px;
+      font-size: clamp(36px, 5vw, 68px);
+      font-weight: 400;
+      letter-spacing: -2.5px;
+      line-height: 1;
+    }
+
+    .informacion p {
+      max-width: 700px;
+      color: rgba(241,238,229,.7);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .informacion p + p { margin-top: 16px; }
+
+    .romansi-enlace {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+      padding: 14px 18px;
+      border: 1px solid var(--linea);
+      color: var(--crema);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: border-color .2s ease, background-color .2s ease;
+    }
+
+    .romansi-enlace:hover {
+      border-color: var(--verde);
+      background: rgba(167,181,155,.07);
+    }
+
+    .romansi-logo {
+      display: block;
+      width: 116px;
+      height: auto;
+      flex: 0 0 auto;
+    }
+
+    .privacidad {
+      padding: 32px;
+      background: var(--fondo-suave);
+      border-top: 3px solid var(--verde-oscuro);
+    }
+
+    .privacidad h3 {
+      margin-bottom: 16px;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
   .manifiesto small {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -528,7 +618,8 @@
       }
 
       .bienestar-grid,
-      .elaboracion-cabecera {
+      .elaboracion-cabecera,
+      .informacion {
         grid-template-columns: 1fr;
       }
 
@@ -549,6 +640,14 @@
     gap: 30px;
     margin-bottom: 70px;
 }
+
+      .informacion { padding-top: 60px; }
+
+      .romansi-enlace {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+      }
 
       footer {
         flex-direction: column;
@@ -585,6 +684,7 @@
     <a href="#productos">Productos</a>
     <a href="#esencia">Nuestra esencia</a>
     <a href="#elaboracion">Elaboración</a>
+    <a href="#empresa">La empresa</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
@@ -702,10 +802,10 @@
       </p>
 
       <div class="bienestar-grid">
-        <article class="bienestar-producto">
+        <article class="bienestar-producto" role="img" aria-label="Sales de baño sin colorantes con flores secas de lavanda y caléndula">
           <small>Próximamente / 05</small>
           <h4>Sales de baño</h4>
-          <p>Preparación artesanal con sales de Epsom, pensada para usar en bañera o pediluvio.</p>
+          <p>Preparación artesanal sin colorantes, con sales de Epsom y flores secas, pensada para usar en bañera o pediluvio.</p>
         </article>
 
         <article class="bienestar-producto">
@@ -773,6 +873,34 @@
 
   </section>
 
+  <section class="informacion" id="empresa">
+    <div>
+      <small>Sobre la empresa</small>
+      <h2>El cuidado artesanal como forma de hacer.</h2>
+      <p>
+        Esencia Raíz es un emprendimiento uruguayo de cosmética artesanal. Elaboramos en pequeños lotes, seleccionamos cuidadosamente cada materia prima y respetamos los tiempos propios de cada proceso.
+      </p>
+      <p>
+        Buscamos crear productos simples y honestos para acompañar los rituales cotidianos de cuidado, con una mirada cercana a la naturaleza y al trabajo hecho a mano.
+      </p>
+      <a class="romansi-enlace" href="https://romansi-estudio-digital-mau72.ondigitalocean.app/" target="_blank" rel="noopener noreferrer" aria-label="Visitar ROMANSI Estudio Digital">
+        <img class="romansi-logo" src="romansi-logo.webp" alt="ROMANSI Estudio Digital">
+        <span>Diseño y desarrollo web</span>
+      </a>
+    </div>
+
+    <aside class="privacidad" id="privacidad">
+      <small>Información legal</small>
+      <h3>Política de privacidad</h3>
+      <p>
+        Esencia Raíz no solicita ni almacena directamente datos personales de quienes visitan este sitio. Para mostrar la disponibilidad de los productos consulta únicamente información pública de stock administrada por la empresa.
+      </p>
+      <p>
+        Los enlaces hacia servicios o sitios externos se rigen por sus propias políticas de privacidad. Si en el futuro incorporamos formularios, compras o herramientas de medición, actualizaremos esta información antes de utilizarlos.
+      </p>
+    </aside>
+  </section>
+
 </main>
 
 
@@ -784,7 +912,7 @@
   </div>
 
   <div>
-    Uruguay
+    Uruguay<br><a href="#privacidad" style="display:inline-block;margin-top:6px;color:inherit">Privacidad</a>
   </div>
 
   <div>
