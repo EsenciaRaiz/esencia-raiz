@@ -613,16 +613,11 @@
     opacity: 0.65;
 }
 
-   .manifiesto p {
-    font-size: clamp(34px, 4.5vw, 64px);
-    line-height: 1.02;
-    letter-spacing: -2.5px;
-    max-width: 900px;
-}
-
-    /* FOOTER */
-
-    footer {
+    .informacion {
+      padding: 75px 4vw 95px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+      gap: clamp(45px, 8vw, 120px);
       border-top: 1px solid var(--linea);
       padding: 0 4vw;
       color: rgba(241,238,229,.65);
@@ -768,6 +763,94 @@
       color: var(--crema);
       font-weight: 700;
       letter-spacing: .16em;
+    }
+
+    @media (max-width: 800px) {
+
+    .informacion h2 {
+      max-width: 720px;
+      margin-bottom: 24px;
+      font-size: clamp(36px, 5vw, 68px);
+      font-weight: 400;
+      letter-spacing: -2.5px;
+      line-height: 1;
+    }
+
+    .informacion p {
+      max-width: 700px;
+      color: rgba(241,238,229,.7);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .informacion p + p { margin-top: 16px; }
+
+    .credito-romansi {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 6px;
+      color: inherit;
+      font-size: 12px;
+      opacity: .75;
+      text-decoration: none;
+    }
+
+    .credito-romansi img {
+      display: block;
+      width: 58px;
+      height: auto;
+    }
+
+    .credito-romansi:hover { opacity: 1; }
+
+    .enlace-whatsapp {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--crema);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .enlace-whatsapp:hover { color: var(--verde); }
+
+    .privacidad {
+      padding: 32px;
+      background: var(--fondo-suave);
+      border-top: 3px solid var(--verde-oscuro);
+    }
+
+    .privacidad h3 {
+      margin-bottom: 16px;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+  .manifiesto small {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.65;
+}
+
+   .manifiesto p {
+    font-size: clamp(34px, 4.5vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -2.5px;
+    max-width: 900px;
+}
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--linea);
+      padding: 45px 4vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      color: rgba(241,238,229,.65);
+      font-size: 13px;
     }
 
     @media (max-width: 800px) {
@@ -1064,6 +1147,30 @@
       Más materia, tiempo y origen.
     </p>
 
+  </section>
+
+  <section class="informacion" id="empresa">
+    <div>
+      <small>Sobre la empresa</small>
+      <h2>El cuidado artesanal como forma de hacer.</h2>
+      <p>
+        Esencia Raíz es un emprendimiento uruguayo de cosmética artesanal. Elaboramos en pequeños lotes, seleccionamos cuidadosamente cada materia prima y respetamos los tiempos propios de cada proceso.
+      </p>
+      <p>
+        Buscamos crear productos simples y honestos para acompañar los rituales cotidianos de cuidado, con una mirada cercana a la naturaleza y al trabajo hecho a mano.
+      </p>
+    </div>
+
+    <aside class="privacidad" id="privacidad">
+      <small>Información legal</small>
+      <h3>Política de privacidad</h3>
+      <p>
+        Esencia Raíz no solicita ni almacena directamente datos personales de quienes visitan este sitio. Para mostrar la disponibilidad de los productos consulta únicamente información pública de stock administrada por la empresa.
+      </p>
+      <p>
+        Los enlaces hacia servicios o sitios externos se rigen por sus propias políticas de privacidad. Si en el futuro incorporamos formularios, compras o herramientas de medición, actualizaremos esta información antes de utilizarlos.
+      </p>
+    </aside>
   </section>
 
   <section class="informacion" id="empresa">
