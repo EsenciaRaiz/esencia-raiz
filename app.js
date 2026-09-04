@@ -24,7 +24,7 @@ async function cargarCatalogo() {
 
   const mensaje = document.getElementById("estado-catalogo");
   const controlador = new AbortController();
-  const limite = setTimeout(() => controlador.abort(), 6000);
+  const limite = setTimeout(() => controlador.abort(), 15000);
 
   try {
     const respuesta = await fetch(CATALOGO_API, {
