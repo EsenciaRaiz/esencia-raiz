@@ -409,6 +409,29 @@
       max-width: 600px;
     }
 
+    .elaboracion-imagen {
+      min-height: clamp(260px, 36vw, 520px);
+      margin-bottom: 45px;
+      background-image: url("pequenos-lotes.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .elaboracion-imagen span {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      padding: 12px 15px;
+      background: var(--fondo);
+      color: var(--verde);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
     .pasos {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -731,6 +754,10 @@
       <p>
         Trabajamos artesanalmente, en pequeños lotes y respetando el tiempo que necesita cada producto. Así podemos cuidar cada etapa sin revelar las fórmulas propias de Esencia Raíz.
       </p>
+    </div>
+
+    <div class="elaboracion-imagen" role="img" aria-label="Elaboración artesanal en pequeños lotes">
+      <span>Hecho en pequeños lotes</span>
     </div>
 
     <div class="pasos">
