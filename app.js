@@ -11,6 +11,13 @@ function aplicarContacto(contacto) {
   aplicarRedSocial("enlace-facebook", contacto.facebookUrl, ["facebook.com", "fb.com"]);
   aplicarRedSocial("enlace-instagram", contacto.instagramUrl, ["instagram.com"]);
 
+  const direccion = document.getElementById("direccion-negocio");
+  const textoDireccion = String(contacto.direccion || "").trim();
+  if (direccion) {
+    direccion.textContent = textoDireccion;
+    direccion.hidden = !textoDireccion;
+  }
+
   const telefono = String(contacto.telefono).replace(/\D/g, "");
   if (!telefono) return;
 

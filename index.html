@@ -656,6 +656,28 @@
     .footer-contacto a:hover,
     .footer-navegacion a:hover { color: var(--verde); }
 
+    .footer-direccion {
+      max-width: 260px;
+      margin-top: 24px;
+      color: rgba(241,238,229,.72);
+      font-size: 14px;
+      font-style: normal;
+      line-height: 1.55;
+    }
+
+    .footer-direccion[hidden] { display: none; }
+
+    .footer-direccion::before {
+      content: "Dirección";
+      display: block;
+      margin-bottom: 5px;
+      color: var(--verde);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
     .footer-redes {
       display: flex;
       flex-wrap: wrap;
@@ -1055,6 +1077,7 @@
       <a id="enlace-whatsapp" class="enlace-whatsapp" href="https://wa.me/59897632965?text=Hola%2C%20quiero%20consultar%20por%20los%20productos%20de%20Esencia%20Ra%C3%ADz." target="_blank" rel="noopener noreferrer">
         WhatsApp<br><span id="telefono-visible">+598 97 632 965</span>
       </a>
+      <address id="direccion-negocio" class="footer-direccion" hidden></address>
       <div class="footer-redes" aria-label="Redes sociales de Esencia Raíz">
         <a id="enlace-facebook" class="red-social" href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Esencia Raíz" title="Facebook" hidden>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-9h3l.45-3.5H13.5V7.27c0-1.01.28-1.7 1.73-1.7h1.85V2.45a24.8 24.8 0 0 0-2.7-.14c-2.67 0-4.5 1.63-4.5 4.62V9.5h-3V13h3v9h3.62Z"/></svg>
@@ -1082,6 +1105,6 @@
   </div>
 </footer>
 
-<script src="app.js?v=20260904-redes" defer></script>
+<script src="app.js?v=20260904-contacto" defer></script>
 </body>
 </html>

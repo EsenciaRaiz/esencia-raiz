@@ -36,6 +36,7 @@ function obtenerContactoPublico_() {
     mensajeAutomatico: campos.MENSAJE_AUTOMATICO || 'Hola, quiero consultar por los productos de Esencia Raíz.',
     facebookUrl: campos.FACEBOOK_URL || '',
     instagramUrl: campos.INSTAGRAM_URL || '',
+    direccion: campos.DIRECCION || '',
   };
 }
 
