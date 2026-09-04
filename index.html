@@ -306,6 +306,7 @@
 
     .bienestar-producto:nth-child(2) {
       background: linear-gradient(145deg, #c9aaa5, #a7b59b);
+      min-height: 390px;
     }
 
     .bienestar-producto small,
@@ -323,6 +324,62 @@
     }
 
     .bienestar-producto p { max-width: 470px; line-height: 1.5; }
+
+    .bienestar-producto > :not(.bombas-ilustracion) {
+      position: relative;
+      z-index: 2;
+    }
+
+    .bombas-ilustracion {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      width: 220px;
+      height: 145px;
+      z-index: 1;
+    }
+
+    .bomba {
+      position: absolute;
+      width: 105px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 28%, #fff, #eeeae2 58%, #c9c5bd 100%);
+      box-shadow: 0 15px 26px rgba(23,26,22,.24);
+    }
+
+    .bomba::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      right: 4px;
+      top: 50%;
+      border-top: 1px solid rgba(104,118,96,.35);
+      transform: rotate(-6deg);
+    }
+
+    .bomba-uno { left: 0; top: 28px; }
+    .bomba-dos { left: 70px; top: 3px; transform: scale(.9); }
+    .bomba-tres { right: 0; top: 40px; transform: scale(.78); }
+
+    .aviso-ilustrativo {
+      position: absolute;
+      top: 20px;
+      left: 26px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: .7;
+    }
+
+    .bienestar-estado {
+      display: block;
+      margin-top: 13px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
 
     /* ELABORACIÓN */
 
@@ -651,9 +708,16 @@
         </article>
 
         <article class="bienestar-producto">
-          <small>Próximamente / 06</small>
+          <span class="aviso-ilustrativo">Imagen ilustrativa</span>
+          <div class="bombas-ilustracion" aria-hidden="true">
+            <span class="bomba bomba-uno"></span>
+            <span class="bomba bomba-dos"></span>
+            <span class="bomba bomba-tres"></span>
+          </div>
+          <small>Disponible / 06</small>
           <h4>Bombas efervescentes</h4>
-          <p>Bombas para bañera o pediluvio con sales de Epsom y una experiencia aromática y efervescente.</p>
+          <p>Bombas artesanales blancas con sales de Epsom, disponibles en menta y lavanda. Para bañera o pediluvio. Próximamente, nuevos aromas.</p>
+          <span class="bienestar-estado">Disponible — consultar aromas</span>
         </article>
       </div>
     </div>
