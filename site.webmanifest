@@ -1,0 +1,10 @@
+{
+  "name": "Esencia Raíz",
+  "short_name": "Esencia Raíz",
+  "description": "Cosmética artesanal uruguaya.",
+  "lang": "es-UY",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#171a16",
+  "theme_color": "#171a16"
+}
