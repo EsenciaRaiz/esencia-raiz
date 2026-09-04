@@ -6,7 +6,10 @@ const CATALOGO_API =
 document.getElementById("anio-actual").textContent = new Date().getFullYear();
 
 function aplicarContacto(contacto) {
-  if (!contacto || !contacto.telefono) return;
+  if (!contacto) return;
+
+  aplicarRedSocial("enlace-facebook", contacto.facebookUrl, ["facebook.com", "fb.com"]);
+  aplicarRedSocial("enlace-instagram", contacto.instagramUrl, ["instagram.com"]);
 
   const telefono = String(contacto.telefono).replace(/\D/g, "");
   if (!telefono) return;
@@ -18,6 +21,25 @@ function aplicarContacto(contacto) {
 
   if (enlace) enlace.href = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
   if (visible) visible.textContent = contacto.telefonoVisible || telefono;
+}
+
+function aplicarRedSocial(id, valor, dominiosPermitidos) {
+  const enlace = document.getElementById(id);
+  if (!enlace) return;
+
+  try {
+    const url = new URL(String(valor || "").trim());
+    const dominio = url.hostname.toLowerCase().replace(/^www\./, "");
+    const esValida = url.protocol === "https:" &&
+      dominiosPermitidos.some((permitido) => dominio === permitido || dominio.endsWith(`.${permitido}`));
+
+    if (!esValida) throw new Error("Dirección de red social no válida");
+    enlace.href = url.href;
+    enlace.hidden = false;
+  } catch (error) {
+    enlace.hidden = true;
+    enlace.removeAttribute("href");
+  }
 }
 
 function aplicarDisponibilidad(productos) {

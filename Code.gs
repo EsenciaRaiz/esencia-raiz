@@ -30,12 +30,12 @@ function obtenerContactoPublico_() {
   );
 
   const telefono = (campos.TELEFONO_WHATSAPP || '').replace(/\D/g, '');
-  if (!telefono) return null;
-
   return {
     telefono: telefono,
     telefonoVisible: campos.TELEFONO_VISIBLE || telefono,
     mensajeAutomatico: campos.MENSAJE_AUTOMATICO || 'Hola, quiero consultar por los productos de Esencia Raíz.',
+    facebookUrl: campos.FACEBOOK_URL || '',
+    instagramUrl: campos.INSTAGRAM_URL || '',
   };
 }
 
