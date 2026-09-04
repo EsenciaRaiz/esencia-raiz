@@ -254,6 +254,121 @@
       color: rgba(241,238,229,.72);
       font-size: 13px;
     }
+
+    .bienestar {
+      margin-top: 70px;
+      padding-top: 35px;
+      border-top: 1px solid var(--linea);
+    }
+
+    .bienestar h3 {
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 400;
+      letter-spacing: -2px;
+      margin-bottom: 12px;
+    }
+
+    .bienestar-intro {
+      max-width: 680px;
+      color: rgba(241,238,229,.66);
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .bienestar-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .bienestar-producto {
+      min-height: 290px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #d8ccc3, #8d796c);
+      color: var(--fondo);
+    }
+
+    .bienestar-producto::before {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border: 1px solid rgba(23,26,22,.28);
+      border-radius: 50%;
+      right: -35px;
+      top: -55px;
+    }
+
+    .bienestar-producto:nth-child(2) {
+      background: linear-gradient(145deg, #c9aaa5, #a7b59b);
+    }
+
+    .bienestar-producto small,
+    .paso small {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .bienestar-producto h4 {
+      font-size: clamp(25px, 3vw, 38px);
+      font-weight: 500;
+      margin: 9px 0;
+    }
+
+    .bienestar-producto p { max-width: 470px; line-height: 1.5; }
+
+    /* ELABORACIÓN */
+
+    .elaboracion {
+      padding: 75px 4vw 100px;
+      background: var(--fondo-suave);
+      scroll-margin-top: 20px;
+    }
+
+    .elaboracion-cabecera {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 45px;
+    }
+
+    .elaboracion h2 {
+      font-size: clamp(42px, 6vw, 82px);
+      font-weight: 400;
+      letter-spacing: -3px;
+    }
+
+    .elaboracion-cabecera p {
+      color: rgba(241,238,229,.7);
+      line-height: 1.65;
+      max-width: 600px;
+    }
+
+    .pasos {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--linea);
+    }
+
+    .paso {
+      padding: 26px 22px 8px 0;
+      border-right: 1px solid var(--linea);
+      min-height: 170px;
+    }
+
+    .paso:not(:first-child) { padding-left: 22px; }
+    .paso:last-child { border-right: 0; }
+    .paso small { color: var(--verde); }
+    .paso h3 { font-size: 19px; font-weight: 500; margin: 18px 0 9px; }
+    .paso p { color: rgba(241,238,229,.62); font-size: 13px; line-height: 1.5; }
     
     .numero {
       position: absolute;
@@ -354,6 +469,22 @@
         grid-template-columns: 1fr;
       }
 
+      .bienestar-grid,
+      .elaboracion-cabecera {
+        grid-template-columns: 1fr;
+      }
+
+      .pasos { grid-template-columns: 1fr; }
+      .paso,
+      .paso:not(:first-child) {
+        padding: 22px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--linea);
+        min-height: 0;
+      }
+
+      .paso:last-child { border-bottom: 0; }
+
       .manifiesto {
     grid-template-columns: 1fr;
     padding: 60px 7vw;
@@ -439,7 +570,7 @@
       </div>
     </article>
 
-    <article class="pieza artesanal" id="elaboracion">
+    <article class="pieza artesanal">
       <div class="etiqueta">
         <small>Proceso</small>
         <h2>Hecho en pequeños lotes</h2>
@@ -506,6 +637,65 @@
 
     <p class="estado-catalogo" id="estado-catalogo" role="status"></p>
 
+    <div class="bienestar">
+      <h3>Rituales para el baño</h3>
+      <p class="bienestar-intro">
+        Nuevas propuestas artesanales para transformar el baño o el pediluvio en un momento de pausa y cuidado.
+      </p>
+
+      <div class="bienestar-grid">
+        <article class="bienestar-producto">
+          <small>Próximamente / 05</small>
+          <h4>Sales de baño</h4>
+          <p>Preparación artesanal con sales de Epsom, pensada para usar en bañera o pediluvio.</p>
+        </article>
+
+        <article class="bienestar-producto">
+          <small>Próximamente / 06</small>
+          <h4>Bombas efervescentes</h4>
+          <p>Bombas para bañera o pediluvio con sales de Epsom y una experiencia aromática y efervescente.</p>
+        </article>
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="elaboracion" id="elaboracion">
+    <div class="elaboracion-cabecera">
+      <h2>Elaboración</h2>
+      <p>
+        Trabajamos artesanalmente, en pequeños lotes y respetando el tiempo que necesita cada producto. Así podemos cuidar cada etapa sin revelar las fórmulas propias de Esencia Raíz.
+      </p>
+    </div>
+
+    <div class="pasos">
+      <article class="paso">
+        <small>01</small>
+        <h3>Selección</h3>
+        <p>Elegimos cuidadosamente las materias primas de cada elaboración.</p>
+      </article>
+      <article class="paso">
+        <small>02</small>
+        <h3>Proceso en frío</h3>
+        <p>Elaboramos los jabones mediante un proceso artesanal controlado.</p>
+      </article>
+      <article class="paso">
+        <small>03</small>
+        <h3>Corte</h3>
+        <p>Cada pieza se corta y revisa de forma individual.</p>
+      </article>
+      <article class="paso">
+        <small>04</small>
+        <h3>Curado</h3>
+        <p>Respetamos el período de reposo necesario antes de ofrecer cada jabón.</p>
+      </article>
+      <article class="paso">
+        <small>05</small>
+        <h3>Control del lote</h3>
+        <p>Registramos y preparamos cada lote antes de su entrega.</p>
+      </article>
+    </div>
   </section>
 
 
