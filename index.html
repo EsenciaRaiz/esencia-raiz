@@ -294,6 +294,34 @@
 
     .disponibilidad.agotado { color: var(--rosa); }
 
+    .producto .precio-producto {
+      display: flex;
+      gap: 9px;
+      align-items: baseline;
+      margin-top: 13px;
+      color: var(--crema);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+
+    .producto .precio-producto[hidden] { display: none; }
+
+    .producto .precio-producto small {
+      color: rgba(241,238,229,.55);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .precio-anterior {
+      color: rgba(241,238,229,.48);
+      font-size: 13px;
+      font-weight: 400;
+      text-decoration: line-through;
+    }
+
     .estado-catalogo {
       min-height: 1.5em;
       margin-top: 24px;
@@ -1105,6 +1133,6 @@
   </div>
 </footer>
 
-<script src="app.js?v=20260904-contacto" defer></script>
+<script src="app.js?v=20260904-precios" defer></script>
 </body>
 </html>

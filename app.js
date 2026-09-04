@@ -51,6 +51,11 @@ function aplicarRedSocial(id, valor, dominiosPermitidos) {
 
 function aplicarDisponibilidad(productos) {
   const porId = new Map(productos.map((producto) => [String(producto.id), producto]));
+  const formatoPrecio = new Intl.NumberFormat("es-UY", {
+    style: "currency",
+    currency: "UYU",
+    maximumFractionDigits: 0,
+  });
 
   document.querySelectorAll("[data-producto-id]").forEach((tarjeta) => {
     const producto = porId.get(tarjeta.dataset.productoId);
@@ -60,6 +65,39 @@ function aplicarDisponibilidad(productos) {
     const disponible = producto.activo && producto.stockPublicable && producto.stock > 0;
     estado.textContent = disponible ? "Disponible" : "Sin stock por el momento";
     estado.classList.toggle("agotado", !disponible);
+
+    let precio = tarjeta.querySelector(".precio-producto");
+    if (!precio) {
+      precio = document.createElement("p");
+      precio.className = "precio-producto";
+      precio.setAttribute("aria-live", "polite");
+      estado.before(precio);
+    }
+
+    const precioNormal = Number(producto.precio);
+    const precioPromocional = Number(producto.precioPromocional);
+    const mostrar = producto.publicarPrecio && Number.isFinite(precioNormal) && precioNormal > 0;
+    precio.hidden = !mostrar;
+    precio.replaceChildren();
+
+    if (mostrar) {
+      const hayPromocion = Number.isFinite(precioPromocional) &&
+        precioPromocional > 0 && precioPromocional < precioNormal;
+      const valorPrincipal = document.createElement("span");
+      valorPrincipal.textContent = formatoPrecio.format(hayPromocion ? precioPromocional : precioNormal);
+      precio.append(valorPrincipal);
+
+      if (hayPromocion) {
+        const anterior = document.createElement("span");
+        anterior.className = "precio-anterior";
+        anterior.textContent = formatoPrecio.format(precioNormal);
+        precio.append(anterior);
+      }
+
+      const unidad = document.createElement("small");
+      unidad.textContent = "por unidad";
+      precio.append(unidad);
+    }
   });
 }
 

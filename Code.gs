@@ -56,15 +56,25 @@ function obtenerProductosPublicos_() {
 
   return valores.slice(1)
     .filter((fila) => fila[indice.ID])
-    .map((fila) => ({
-      id: fila[indice.ID],
-      nombre: fila[indice.NOMBRE],
-      activo: esSi_(fila[indice.ACTIVO]),
-      stockPublicable: esSi_(fila[indice.STOCK_PUBLICABLE]),
-      stock: numeroSeguro_(fila[indice.STOCK]),
-      precio: indice.PRECIO_PUBLICADO === undefined ? null : numeroOpcional_(fila[indice.PRECIO_PUBLICADO]),
-      precioPromocional: indice.PRECIO_PROMOCIONAL === undefined ? null : numeroOpcional_(fila[indice.PRECIO_PROMOCIONAL]),
-    }));
+    .map((fila) => {
+      const publicarPrecio = indice.PUBLICAR_PRECIO !== undefined &&
+        esSi_(fila[indice.PUBLICAR_PRECIO]);
+
+      return {
+        id: fila[indice.ID],
+        nombre: fila[indice.NOMBRE],
+        activo: esSi_(fila[indice.ACTIVO]),
+        stockPublicable: esSi_(fila[indice.STOCK_PUBLICABLE]),
+        stock: numeroSeguro_(fila[indice.STOCK]),
+        publicarPrecio: publicarPrecio,
+        precio: publicarPrecio && indice.PRECIO_PUBLICADO !== undefined
+          ? numeroOpcional_(fila[indice.PRECIO_PUBLICADO])
+          : null,
+        precioPromocional: publicarPrecio && indice.PRECIO_PROMOCIONAL !== undefined
+          ? numeroOpcional_(fila[indice.PRECIO_PROMOCIONAL])
+          : null,
+      };
+    });
 }
 
 function normalizarEncabezado_(valor) {
