@@ -10,6 +10,8 @@ function aplicarContacto(contacto) {
 
   aplicarRedSocial("enlace-facebook", contacto.facebookUrl, ["facebook.com", "fb.com"]);
   aplicarRedSocial("enlace-instagram", contacto.instagramUrl, ["instagram.com"]);
+  aplicarRedSocial("enlace-tiktok", contacto.tiktokUrl, ["tiktok.com"]);
+  aplicarRedSocial("enlace-youtube", contacto.youtubeUrl, ["youtube.com", "youtu.be"]);
 
   const direccion = document.getElementById("direccion-negocio");
   const textoDireccion = String(contacto.direccion || "").trim();

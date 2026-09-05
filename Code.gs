@@ -3,7 +3,7 @@
  * Publica exclusivamente datos seleccionados de PRODUCTOS.
  * No expone recetas, costos, proveedores ni movimientos de stock.
  */
-const PLANILLA_ID = '1BBIIuGlssSipCcZr2EzKMNrpIAHBUb_e_qC8RQ17PnM';
+const PLANILLA_ID = '1rW0HZCTjyJ-WlzZYGe8ANNYqnc3vTFMVgKSKdDXKnlQ';
 
 function doGet() {
   const salida = {
@@ -36,6 +36,8 @@ function obtenerContactoPublico_() {
     mensajeAutomatico: campos.MENSAJE_AUTOMATICO || 'Hola, quiero consultar por los productos de Esencia Raíz.',
     facebookUrl: campos.FACEBOOK_URL || '',
     instagramUrl: campos.INSTAGRAM_URL || '',
+    tiktokUrl: campos.TIKTOK_URL || '',
+    youtubeUrl: campos.YOUTUBE_URL || '',
     direccion: campos.DIRECCION || '',
   };
 }

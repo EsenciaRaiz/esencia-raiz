@@ -593,18 +593,6 @@
 
     .enlace-whatsapp:hover { color: var(--verde); }
 
-    .privacidad {
-      padding: 32px;
-      background: var(--fondo-suave);
-      border-top: 3px solid var(--verde-oscuro);
-    }
-
-    .privacidad h3 {
-      margin-bottom: 16px;
-      font-size: 25px;
-      font-weight: 500;
-    }
-
   .manifiesto small {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -675,6 +663,22 @@
       text-decoration: none;
       text-transform: none;
     }
+
+    .footer-contacto .enlace-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .enlace-whatsapp .icono-whatsapp {
+      display: block;
+      width: 17px;
+      height: 17px;
+      flex: 0 0 auto;
+      fill: currentColor;
+    }
+
+    .enlace-whatsapp .icono-whatsapp path { fill: currentColor; }
 
     .footer-contacto a:hover,
     .footer-navegacion a:hover { color: var(--verde); }
@@ -803,16 +807,6 @@
     }
 
     .credito-romansi:hover { opacity: 1; }
-
-    .enlace-whatsapp {
-      display: inline-block;
-      margin-top: 8px;
-      color: var(--crema);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .enlace-whatsapp:hover { color: var(--verde); }
 
     .privacidad {
       padding: 32px;
@@ -1194,30 +1188,6 @@
     </aside>
   </section>
 
-  <section class="informacion" id="empresa">
-    <div>
-      <small>Sobre la empresa</small>
-      <h2>El cuidado artesanal como forma de hacer.</h2>
-      <p>
-        Esencia Raíz es un emprendimiento uruguayo de cosmética artesanal. Elaboramos en pequeños lotes, seleccionamos cuidadosamente cada materia prima y respetamos los tiempos propios de cada proceso.
-      </p>
-      <p>
-        Buscamos crear productos simples y honestos para acompañar los rituales cotidianos de cuidado, con una mirada cercana a la naturaleza y al trabajo hecho a mano.
-      </p>
-    </div>
-
-    <aside class="privacidad" id="privacidad">
-      <small>Información legal</small>
-      <h3>Política de privacidad</h3>
-      <p>
-        Esencia Raíz no solicita ni almacena directamente datos personales de quienes visitan este sitio. Para mostrar la disponibilidad de los productos consulta únicamente información pública de stock administrada por la empresa.
-      </p>
-      <p>
-        Los enlaces hacia servicios o sitios externos se rigen por sus propias políticas de privacidad. Si en el futuro incorporamos formularios, compras o herramientas de medición, actualizaremos esta información antes de utilizarlos.
-      </p>
-    </aside>
-  </section>
-
 </main>
 
 
@@ -1230,8 +1200,9 @@
 
     <div class="footer-contacto">
       <span class="footer-titulo">Contacto</span>
-      <a id="enlace-whatsapp" class="enlace-whatsapp" href="https://wa.me/59897632965?text=Hola%2C%20quiero%20consultar%20por%20los%20productos%20de%20Esencia%20Ra%C3%ADz." target="_blank" rel="noopener noreferrer">
-        WhatsApp<br><span id="telefono-visible">+598 97 632 965</span>
+      <a id="enlace-whatsapp" class="enlace-whatsapp" href="https://wa.me/59897632965?text=Hola%2C%20quiero%20consultar%20por%20los%20productos%20de%20Esencia%20Ra%C3%ADz." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" title="Contactar por WhatsApp">
+        <svg class="icono-whatsapp" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.84 9.84 0 0 0-8.46 14.86L2.05 22l5.28-1.49A9.95 9.95 0 1 0 12.04 2Zm0 17.98a8.01 8.01 0 0 1-4.09-1.12l-.29-.17-3.13.88.84-3.05-.19-.31a7.98 7.98 0 1 1 6.86 3.77Zm4.39-5.99c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19a7.2 7.2 0 0 1-1.34-1.67c-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+        <span id="telefono-visible">+598 97 632 965</span>
       </a>
       <address id="direccion-negocio" class="footer-direccion" hidden></address>
       <div class="footer-redes" aria-label="Redes sociales de Esencia Raíz">
@@ -1240,6 +1211,12 @@
         </a>
         <a id="enlace-instagram" class="red-social" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Esencia Raíz" title="Instagram" hidden>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+        </a>
+        <a id="enlace-tiktok" class="red-social" href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Esencia Raíz" title="TikTok" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 2h-3.3v13.35a3.05 3.05 0 1 1-2.63-3.02V8.98A6.36 6.36 0 1 0 15.6 15.3V8.53A8.1 8.1 0 0 0 20.35 10V6.7A4.8 4.8 0 0 1 15.6 2Z"/></svg>
+        </a>
+        <a id="enlace-youtube" class="red-social" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Esencia Raíz" title="YouTube" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.13-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.37.51A3.02 3.02 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.13 2.14c1.87.51 9.37.51 9.37.51s7.5 0 9.37-.51a3.02 3.02 0 0 0 2.13-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.62V8.38L15.86 12 9.6 15.62Z"/></svg>
         </a>
       </div>
     </div>
